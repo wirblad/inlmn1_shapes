@@ -4,7 +4,6 @@
 #include "shapes.h"
 #include "calculator.h"
 
-
 int main(){
 
     while(true){
@@ -18,7 +17,4 @@ int main(){
         if(choice == 3)
             break;
     }
-
-
-
 }

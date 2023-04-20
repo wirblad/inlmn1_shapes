@@ -3,13 +3,14 @@
 #include <string.h>
 #include "safeinput.h"
 
-void rectangle(){
+int rectangle(){
 
     float lenght = 0;
     float width = 0;
     GetInputFloat("Enter lenght of rectangle: ", &lenght);
     GetInputFloat("Enter width of rectangle: ", &width);
-    printf("Area of rectangle is: %.2f and perimeter is: %.2f\n", lenght*width, (2*lenght)+(2*width));
+    printf("Area of rectangle is: %.2f and perimeter is: %.2f\n\n", lenght*width, (2*lenght)+(2*width));
+    return 1;
 }
 
 void parallelogram(){
@@ -20,7 +21,7 @@ void parallelogram(){
     GetInputFloat("Enter base of parallelogram: ", &base);
     GetInputFloat("Enter other side of parallelogram: ", &side2);
     GetInputFloat("Enter hight of paralellogram: ", &hight);
-    printf("Area of parallelogram is: %.2f and perimeter is: %.2f\n", base*hight, 2*(base+side2));
+    printf("Area of parallelogram is: %.2f and perimeter is: %.2f\n\n", base*hight, 2*(base+side2));
 }
 
 void triangle(){
@@ -33,7 +34,7 @@ void triangle(){
     GetInputFloat("Enter second side of triangle: ", &side2);
     GetInputFloat("Enter third side of triangle: ", &side3);
     GetInputFloat("Enter hight of triangle: ", &hight);
-    printf("Area of triangle is: %.2f and perimeter is: %.2f\n", (base*hight)/2, base+side2+side3);
+    printf("Area of triangle is: %.2f and perimeter is: %.2f\n\n", (base*hight)/2, base+side2+side3);
 }
 
 void circle(){
@@ -41,7 +42,7 @@ void circle(){
     float radie = 0;
     const float pi = 3.14;
     GetInputFloat("Enter radie of circle: ", &radie);
-    printf("Area of circle is: %.2f and perimeter is: %.2f\n", radie*pi, 2*pi*radie);
+    printf("Area of circle is: %.2f and perimeter is: %.2f\n\n", radie*pi, 2*pi*radie);
 
 }
 
