@@ -33,7 +33,7 @@ clean:
 $(OUTPUTDIR):
 	@mkdir "$(OUTPUTDIR)"
 
-$(TEST): shapes.o TestShapes.o safeinput.o
+$(TEST): shapes.o TestShapes.o safeinput.o calculator.o
 	g++ -o $@ $^ $(CFLAGS) -I $(GTEST) $(LIBGTEST)
 
 test: $(TEST)
