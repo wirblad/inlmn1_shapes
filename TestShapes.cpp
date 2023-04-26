@@ -5,8 +5,8 @@
 
 extern "C" {
 #include "shapes.h"
-//#include "safeinput.h"
 #include "calculator.h"
+#include "rockpaperscissor.h"
 }
 
 class ShapesTest : public testing::Test{
@@ -16,6 +16,12 @@ protected:
 };
 
 class CalcTest : public testing::Test{
+protected:
+	void SetUp() override {
+	}
+};
+
+class RockPaperScissorTest : public testing::Test{
 protected:
 	void SetUp() override {
 	}
@@ -97,4 +103,85 @@ TEST_F(CalcTest,testmodulus){
   
     int remainder = modulus(7,3);
     ASSERT_EQ(remainder, 1);
+}
+
+TEST_F(RockPaperScissorTest,testUserRockandComputerRockisDraw){
+  
+    int userWins = 0;
+    int computerWins = 0;
+    play("rock","Rock",&userWins,&computerWins);
+    ASSERT_EQ(userWins, 0);
+    ASSERT_EQ(computerWins, 0);
+}
+
+TEST_F(RockPaperScissorTest,testUserPaperandComputerPaperisDraw){
+  
+    int userWins = 0;
+    int computerWins = 0;
+    play("paper","Paper",&userWins,&computerWins);
+    ASSERT_EQ(userWins, 0);
+    ASSERT_EQ(computerWins, 0);
+}
+
+TEST_F(RockPaperScissorTest,testUserScissorandComputerScissorisDraw){
+  
+    int userWins = 0;
+    int computerWins = 0;
+    play("paper","Paper",&userWins,&computerWins);
+    ASSERT_EQ(userWins, 0);
+    ASSERT_EQ(computerWins, 0);
+}
+
+TEST_F(RockPaperScissorTest,testUserRockandComputerScissorisUserWin){
+  
+    int userWins = 0;
+    int computerWins = 0;
+    play("rock","Scissor",&userWins,&computerWins);
+    ASSERT_EQ(userWins, 1);
+    ASSERT_EQ(computerWins, 0);
+}
+
+TEST_F(RockPaperScissorTest,testUserRockandComputerPaperisComputerWin){
+  
+    int userWins = 0;
+    int computerWins = 0;
+    play("rock","Paper",&userWins,&computerWins);
+    ASSERT_EQ(userWins, 0);
+    ASSERT_EQ(computerWins, 1);
+}
+
+TEST_F(RockPaperScissorTest,testUserPaperandComputerRockisUserWin){
+  
+    int userWins = 0;
+    int computerWins = 0;
+    play("paper","Rock",&userWins,&computerWins);
+    ASSERT_EQ(userWins, 1);
+    ASSERT_EQ(computerWins, 0);
+}
+
+TEST_F(RockPaperScissorTest,testUserPaperandComputerScissorComputerWin){
+  
+    int userWins = 0;
+    int computerWins = 0;
+    play("paper","Scissor",&userWins,&computerWins);
+    ASSERT_EQ(userWins, 0);
+    ASSERT_EQ(computerWins, 1);
+}
+
+TEST_F(RockPaperScissorTest,testUserScissorandComputerRockComputerWin){
+  
+    int userWins = 0;
+    int computerWins = 0;
+    play("scissor","Rock",&userWins,&computerWins);
+    ASSERT_EQ(userWins, 0);
+    ASSERT_EQ(computerWins, 1);
+}
+
+TEST_F(RockPaperScissorTest,testUserScissorandComputerPaperUserWin){
+  
+    int userWins = 0;
+    int computerWins = 0;
+    play("scissor","Paper",&userWins,&computerWins);
+    ASSERT_EQ(userWins, 1);
+    ASSERT_EQ(computerWins, 0);
 }
