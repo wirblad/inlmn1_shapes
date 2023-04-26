@@ -31,15 +31,12 @@ void calculator(){
    float secondNumber = 0;
    while(!GetInputFloat("Enter first number: ", &secondNumber))
       printf("Please enter a number!!\n");
-   //printf("YOUR NUMBER %.2f and %.2f\n\n\n", firstNumber, secondNumber);
-
+ 
    char userChooseOperator;
 
    while(!GetInputChar("Choose operator: +, -, *, /, m(modulus):  ", &userChooseOperator)){
       printf("Please choose an operator");
    }
-
-   //printf("TEST AV OPERATOR ---> %c\n\n", userChooseOperator);
 
    if(userChooseOperator == '+'){
       printf("The sum of %.2f and %.2f equals %.2f\n", firstNumber, secondNumber, add(firstNumber, secondNumber));
@@ -54,7 +51,7 @@ void calculator(){
       printf("%.2f divided by %.2f equals %.2f\n", firstNumber, secondNumber, division(firstNumber, secondNumber));
    }
    else if(userChooseOperator == 'm'){
-      printf("%.2f divided by %.2f gives the remainder %d", firstNumber, secondNumber, modulus(firstNumber,secondNumber));
+      printf("%.2f divided by %.2f gives the remainder %d\n", firstNumber, secondNumber, modulus(firstNumber,secondNumber));
    }
 }
 

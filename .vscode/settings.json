@@ -4,6 +4,11 @@
             "cwd": "c:\\Users\\Henrik\\source\\c\\inlmn1_shapes",
             "binaryPath": "c:\\Users\\Henrik\\source\\c\\inlmn1_shapes\\main.exe",
             "binaryArgs": []
+        },
+        {
+            "cwd": "c:\\Users\\Henrik\\source\\c\\inlmn1_shapes",
+            "binaryPath": "c:\\Users\\Henrik\\source\\c\\inlmn1_shapes\\programmet-debug.exe",
+            "binaryArgs": []
         }
     ]
 }

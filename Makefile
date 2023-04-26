@@ -1,7 +1,7 @@
 PROG=programmet.exe
 TEST=check.exe
-SOURCES=main.c shapes.c safeinput.c calculator.c
-DEPS=shapes.h safeinput.h calculator.h
+SOURCES=main.c shapes.c safeinput.c calculator.c rockpaperscissor.c
+DEPS=shapes.h safeinput.h calculator.h rockpaperscissor.h
 CC=gcc
 CFLAGS=-Wall -Werror
 DEBUG?=1
@@ -33,7 +33,7 @@ clean:
 $(OUTPUTDIR):
 	@mkdir "$(OUTPUTDIR)"
 
-$(TEST): shapes.o TestShapes.o safeinput.o calculator.o
+$(TEST): shapes.o TestShapes.o safeinput.o calculator.o rockpaperscissor.o
 	g++ -o $@ $^ $(CFLAGS) -I $(GTEST) $(LIBGTEST)
 
 test: $(TEST)
